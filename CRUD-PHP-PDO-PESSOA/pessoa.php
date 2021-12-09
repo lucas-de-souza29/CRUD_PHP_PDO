@@ -7,7 +7,7 @@ Class Pessoa{
 	public function __construct($dbname, $host, $user, $senha){
       
           try {
-          		$this->pdo = new PDO("mysql:dbname=".$dbname.";host=".$host, $user, $senha);
+                    $this->pdo = new PDO("mysql:dbname=".$dbname.";host=".$host, $user, $senha);
           } catch (PDOException $e) {
           	    echo "Erro com o Banco de Dados".$e->getMessage();
           	    exit();
@@ -52,21 +52,21 @@ Class Pessoa{
 	//Excluir uma Pessoa 
 	public function excluirPessoa($id){
 
-		$comando = $this->pdo->prepare("DELETE FROM pessoa WHERE id= :id");
-		$comando->bindValue(":id",$id);
-		$comando->execute();
+	   $comando = $this->pdo->prepare("DELETE FROM pessoa WHERE id= :id");
+	   $comando->bindValue(":id",$id);
+	   $comando->execute();
 	}
 
 	//Buscar os dados de uma pessoa
 	public function buscarDadosPessoa($id){
 
-   		$resultado = array();
-         $comando = $this->pdo->prepare("SELECT * FROM pessoa WHERE id= :id");
-         $comando->bindValue(":id",$id);
-         $comando->execute();
-         $resultado = $comando->fetch(PDO::FETCH_ASSOC);
+   	   $resultado = array();
+           $comando = $this->pdo->prepare("SELECT * FROM pessoa WHERE id= :id");
+           $comando->bindValue(":id",$id);
+           $comando->execute();
+           $resultado = $comando->fetch(PDO::FETCH_ASSOC);
 
-         return $resultado;  
+           return $resultado;  
 
 	}
 
@@ -75,11 +75,11 @@ Class Pessoa{
 	public function atualizarDadosPessoa($id, $nome, $telefone, $email){
 		
 	    $comando = $this->pdo->prepare("UPDATE pessoa SET nome = :n, telefone = :t, email = :e WHERE id = :id");
-		$comando->bindValue(":n", $nome);
-		$comando->bindValue(":t", $telefone);
-		$comando->bindValue(":e", $email);
-		$comando->bindValue(":id", $id);
-		$comando->execute();
+	    $comando->bindValue(":n", $nome);
+	    $comando->bindValue(":t", $telefone);
+	    $comando->bindValue(":e", $email);
+	    $comando->bindValue(":id", $id);
+	    $comando->execute();
 	}
 }
 

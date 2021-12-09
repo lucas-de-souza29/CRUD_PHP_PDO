@@ -19,8 +19,8 @@ $pessoa = new Pessoa("crud-pdo","localhost","root","");
      		//-----------------EDITAR----------------------------
      		$id_update = addslashes($_GET['id_update']);
      		$nome = addslashes($_POST['nome']);
-            $telefone = addslashes($_POST['telefone']);
-            $email = addslashes($_POST['email']);
+            	$telefone = addslashes($_POST['telefone']);
+            	$email = addslashes($_POST['email']);
         	if(!empty($nome) && !empty($telefone) && !empty($email)){
            
                //Editar
@@ -40,8 +40,8 @@ $pessoa = new Pessoa("crud-pdo","localhost","root","");
      	else{
 
      		$nome = addslashes($_POST['nome']);
-            $telefone = addslashes($_POST['telefone']);
-            $email = addslashes($_POST['email']);
+            	$telefone = addslashes($_POST['telefone']);
+            	$email = addslashes($_POST['email']);
         	if(!empty($nome) && !empty($telefone) && !empty($email)){
            
                //Cadastrar
